@@ -1,5 +1,5 @@
 {
-  "name": "talk",
+  "name": "gledach-talk",
   "version": "0.1.0",
   "private": false,
   "description": "Record which API hosts local AI coding agents connect to, and notice when one of them is leaking sockets. Zero dependencies, no account, Windows, stays on your machine.",
@@ -7,6 +7,9 @@
   "license": "MIT",
   "engines": {
     "node": ">=22.0.0"
+  },
+  "bin": {
+    "gledach-talk": "./bin/talk.mjs"
   },
   "scripts": {
     "help": "node bin/talk.mjs help",

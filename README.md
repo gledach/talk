@@ -23,15 +23,17 @@ A long agent session can open connections and never close them. On Windows the d
 
 ## Commands
 
-There is no `talk` command on the PATH. That name is already an npm package and a Unix program. Every command below is `node bin/talk.mjs`, which exists only inside this clone.
+The command is `gledach-talk`. `npm link` in this clone puts that name on your PATH. Nothing named `talk` is installed: that name is an npm package and a Unix program. The package name is `gledach-talk`.
+
+`node bin/talk.mjs` is the same program and needs no link. That is what the clone block above runs.
 
 ```bash
-node bin/talk.mjs once                  # one sample
-node bin/talk.mjs once --no-cert        # do not open a connection to read a certificate
-node bin/talk.mjs watch                 # every 60 seconds
-node bin/talk.mjs watch --interval=30 --peeks=4
-node bin/talk.mjs report                # last sample
-node bin/talk.mjs doctor
+gledach-talk once                  # one sample
+gledach-talk once --no-cert        # do not open a connection to read a certificate
+gledach-talk watch                 # every 60 seconds
+gledach-talk watch --interval=30 --peeks=4
+gledach-talk report                # last sample
+gledach-talk doctor
 ```
 
 Logs go to `data/`, which is gitignored. A line is written when a process holds 500 connections or more, when an agent's count climbs by 30 in one interval, when orphaned sockets grow, or when an agent asks for a host it has not used before.
