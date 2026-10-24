@@ -8,9 +8,6 @@
   "engines": {
     "node": ">=22.0.0"
   },
-  "bin": {
-    "talk": "./bin/talk.mjs"
-  },
   "scripts": {
     "help": "node bin/talk.mjs help",
     "once": "node bin/talk.mjs once",

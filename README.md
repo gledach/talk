@@ -23,6 +23,8 @@ A long agent session can open connections and never close them. On Windows the d
 
 ## Commands
 
+There is no `talk` command on the PATH. That name is already an npm package and a Unix program. Every command below is `node bin/talk.mjs`, which exists only inside this clone.
+
 ```bash
 node bin/talk.mjs once                  # one sample
 node bin/talk.mjs once --no-cert        # do not open a connection to read a certificate
