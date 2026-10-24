@@ -1,0 +1,37 @@
+{
+  "name": "talk",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Record which API hosts local AI coding agents connect to, and notice when one of them is leaking sockets. Zero dependencies, no account, Windows, stays on your machine.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "bin": {
+    "talk": "./bin/talk.mjs"
+  },
+  "scripts": {
+    "help": "node bin/talk.mjs help",
+    "once": "node bin/talk.mjs once",
+    "watch": "node bin/talk.mjs watch",
+    "report": "node bin/talk.mjs report",
+    "doctor": "node bin/talk.mjs doctor",
+    "test": "node test/run.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gledach/talk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gledach/talk/issues"
+  },
+  "homepage": "https://github.com/gledach/talk#readme",
+  "keywords": [
+    "windows",
+    "agents",
+    "tcp",
+    "observability",
+    "cli"
+  ]
+}

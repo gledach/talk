@@ -1,0 +1,8 @@
+# Observed traffic. It stays on your machine.
+data/
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
