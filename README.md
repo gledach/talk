@@ -38,4 +38,9 @@ It does not close sockets and it does not restart anything. Restarting the agent
 
 ## What it cannot see
 
-A hostname that was never sent in the TLS handshake. The path after the host (`/v1/messages` versus a telemetry route) is encrypted, and this tool does not decrypt it. An agent that resolves names through its own encrypted DNS and never presents a certificate name is a gap.
+- A hostname that was never sent in the TLS handshake. The certificate read connects to the IP, a few times per sample, heaviest agent first. A server that will not present a name without the right hostname comes back blank.
+- The path after the host (`/v1/messages` versus a telemetry route). It is encrypted, and this tool does not decrypt it. Prompts and `Authorization` headers are never stored.
+- An agent that resolves names through its own encrypted DNS and never presents a certificate name.
+- A process that exited before the first sample. Its sockets still count, and the owner can no longer be named.
+- Anything that is not TCP. The sampler reads the Windows TCP table.
+- Any operating system other than Windows. `report` can print a log you already have. `once` and `watch` cannot take a sample elsewhere.
